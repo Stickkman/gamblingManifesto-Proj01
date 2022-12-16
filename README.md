@@ -22,18 +22,19 @@ NEW APIs
     • google fonts
     • jquery ui widgets
     • Rapid apis below 
-    • live sports odds -   https://rapidapi.com/theoddsapi/api/live-sports-odds/
-              for odds and game scores
-    • api - football -       https://rapidapi.com/api-sports/api/api-football/
-          for injures and more detailed football stats
-    • weather api -        https://rapidapi.com/weatherbit/api/weather/
-          for weather that may effect players
+    • Live Sports Odds -      https://rapidapi.com/theoddsapi/api/live-sports-odds/
+                                  for odds and game scores
+    • American Football Api - https://rapidapi.com/fluis.lacasse/api/americanfootballapi
+                                  for injures and more detailed football stats
+	  KEY FOR ABOVE TWO APIS - 'X-RapidAPI-Key': 'fa9423803dmshc3f5604a90d1177p1bc892jsn9e3c4329a014'
+    • Weather Api -           https://www.weatherapi.com/api-explorer.aspx
+                                   for weather that may effect players
 
 
 TEAM ROLES:
-    • Project Manager = tbd 
-    • Lead Designer  = tbd
-    • Support Designer =  tbd
-    • Lead API Engineer = tbd
-    • Support API Engineer = tbd
-    • QA/Testing/Support = tbd
+    • Project Manager  =     Ignacio Albistu
+    • Lead Designer    =     Jose Del Valle
+    • Support Designer =     Craig Reese
+    • Lead API Engineer =    Adrian Bruno
+    • Support API Engineer = John Kutch
+    • QA/Testing/Support =   Achlet Pierre
