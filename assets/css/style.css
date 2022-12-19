@@ -1,0 +1,23 @@
+/* Base Stylesheet  */
+
+/* custom colors based on draftkings layout*/
+:root { 
+    --black: rgba(36, 35, 35, 0.979);
+    --orange: #fc7921;
+    --green: #53d337;
+    --yellow: #fcc700;
+    --white: #EEEEEE;
+    --grey: #ABABAB;
+ 
+}
+
+/* overrides bulma predefined colors for header */
+.customHeader {  
+    background-color: var(--green);
+
+}
+
+.custom-bg {
+    min-height: 900px;
+    background-color: var(--black); 
+}
