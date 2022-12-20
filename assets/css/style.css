@@ -1,0 +1,87 @@
+* {
+    margin-left: 10px;
+  }
+
+  /* BEGIN Header */
+  header {
+    border-bottom: 20px;
+    height: 60px;
+    width: 100%;
+    line-height: 60px;
+    text-align: center;
+    background-color: black;
+    color: white;
+  }
+
+  nav {
+    margin-left: 20px;
+    word-spacing: 20px;
+  }
+  /* END Header */
+ 
+
+  /* BEGIN Body */
+  body {
+    background: url("https://wallpaperset.com/w/full/5/8/c/119900.jpg");
+    background-size: 1300px;
+  }
+
+/* Once a team is selected the sports img can be hidden
+through JS and the alt bg color gray is displayed insted */
+  #altBody {
+    background-color: gray;
+  }
+
+  /* BEGIN Search for Team Form */
+
+  /* All these elemenst should be hidden until it 
+  has the data required to make it relevant. 
+  I have the display: hidden "commented out" that way
+  you can see the mock-up of how ultimately all the info will
+  look when its all generated: weather, wins/losses, odds, etc.
+   */
+
+   /* this for example should be hidden until 
+   a sports is clicked in the navbar. Through JS 
+   the click can trigger the searchSection to "display" and
+    you can now select the team  you want to see the stats for,
+    current upcoming game and weather  */
+  #searchSection {
+    /* display: none; */
+    color: white;
+    margin-top: 5%;
+  }
+
+
+  h1 {
+    font-size: 20px;
+  }
+
+
+  #search {
+    width: 14%;
+    background-color: red;
+  }
+ /* END Search for Team Form */
+
+
+  #currentWeather {
+    /* display: none; */
+    color: yellow;
+    margin-left: 500px;
+    margin-top: -10%;
+    padding: 50px solid yellow;
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  #teaminfo {
+    /* display: none; */
+    color: yellow;
+    margin-left: 500px;
+    margin-top: 15%;
+    padding: 50px solid yellow;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  /* END Body */
