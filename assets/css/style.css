@@ -11,6 +11,7 @@
     text-align: center;
     background-color: black;
     color: white;
+    cursor: pointer;
   }
 
   nav {
@@ -52,7 +53,6 @@ through JS and the alt bg color gray is displayed insted */
     margin-top: 5%;
   }
 
-
   h1 {
     font-size: 20px;
   }
@@ -61,6 +61,17 @@ through JS and the alt bg color gray is displayed insted */
   #search {
     width: 14%;
     background-color: red;
+    width: 20%;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 2px;
+    cursor: pointer;
+  }
+
+  .search-Bar {
+    width: 20%;
+    padding: 2px;
+    border: 2px solid black;
   }
  /* END Search for Team Form */
 
