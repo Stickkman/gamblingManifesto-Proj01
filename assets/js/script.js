@@ -1,4 +1,9 @@
- api-key-host-jk
+let team;
+let userInput = $('.user-input')
+let searchBtn = $('.search-Btn')
+let nfl = $('.football')
+  
+  
   var wKey = "48d9d1febcb9420b8bd201317222012"; // weather key, global so can use anywhere key is needed
 
 // Weather Api CODE
@@ -39,7 +44,7 @@ getWeather();// runs function test
 // might need to convert city from sports team or viseversa
 
 // emoji icons included in some variables data so we dont have to add them later can just use the variable.
- main  
+  
     
     
     
