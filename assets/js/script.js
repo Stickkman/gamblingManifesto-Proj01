@@ -34,9 +34,9 @@ function getWeather() {
                 
             })
 
-}
 
-getWeather();// runs function test 
+
+
 
 // sidenotes: 
 // can get weather alerts using 'desc' for the area using 'areas'(city) within the 'alert' array.
@@ -50,7 +50,7 @@ getWeather();// runs function test
     
     
 
-
+                // below code is inlcuded in weatherApi function for preload
 
     
     var upcomingGames = {
@@ -136,4 +136,11 @@ getWeather();// runs function test
         .then(response => console.log(response))
         .catch(err => console.error(err));  
 
+}
 
+
+        $(function () { // waits for page to load before any code is executed
+            $('.search-Btn').on('click', getWeather); // listener for search button
+  // insert what function to start above ^^^^^^^^^^^ set to getWeather now and includes other apis fetches in same funciton
+      });
+    
