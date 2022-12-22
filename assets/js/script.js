@@ -5,14 +5,15 @@ let nfl = $('.football')
   
   
   var wKey = "48d9d1febcb9420b8bd201317222012"; // weather key, global so can use anywhere key is needed
-
+  var wCity = "Orlando" // started value for city, will be replaced with search input
 // Weather Api CODE
 
 // function to get the weather
 function getWeather() {
     // variable for url for CURRENT weather
-    var wCity = "Orlando" // implement this to city of searched team
-    var weatherUrl = "http://api.weatherapi.com/v1/current.json?key="+wKey+"&q="+wCity;
+    var wCity = document.querySelector('input').value; // changes default value to user entered text
+  
+    var weatherUrl = "https://api.weatherapi.com/v1/current.json?key="+wKey+"&q="+wCity;
         fetch(weatherUrl)
             .then(function (response){ 
                 console.log("Fetch Status: " + response.status);
@@ -23,34 +24,51 @@ function getWeather() {
             })
             .then(function (data) {
                 console.log(" 🡇 Data Object From Response Below 🡇"); console.log(data); // logs data object response 
-                    var temp = data.current.temp_f + "F 🌡️";
-                    var windSpeed = data.current.gust_mph + "MPH 🌬️"; 
-                    var windDir = data.current.wind_dir;
+                    var temp = data.current.temp_f + "F 🌡️"; // variable for current temp
+                    var windSpeed = data.current.gust_mph + "MPH 🌬️"; // variable for current wind in MPH
+                    var windDir = data.current.wind_dir + " 🧭"; // variable for wind direction
 
-                    // test log off all variables pulled from response object
-                    console.log("Temp: "+temp+" Wind: "+windSpeed+" | Wind Direction: "+windDir);
+                    // test log of all variables pulled from response object
+                    console.log("UserInput: " + wCity + " - Temp: "+temp+" Wind: "+windSpeed+" | Wind Direction: "+windDir);
                      
+                    // renders weather data to div ids in currentWeather section accordingly
+                    $('#wName').text(wCity);
+                    $('#wTemp').text("Temp: "+temp);
+                    $('#windSpeed').text("Wind Speed: "+ windSpeed);
+                    $('#windDir').text("Wind Direction: " + windDir);
+                    
+                          
+            })
+
+            // api call for weather alerts in area
+
+            var weatherAlert = "https://api.weatherapi.com/v1/forecast.json?key="+wKey+"&q="+wCity +"&alerts=yes";
+        fetch(weatherAlert)
+            .then(function (response){ 
+                console.log("Fetch Status: " + response.status);
+                    if (response.status !== 200) { // if response is NOT ok then alert with status code
+                        alert("Error reaching Server" + "\n Status Code: " + response.status);
+                    }
+                    return response.json(); 
+            })
+            .then(function (data2) { // used data2 vs data from above to force reading correct object
+                console.log(" New 🡇 Data Object From Response Below 🡇"); console.log(data2); // logs data object response 
+                     var wAlert = " ❗❗ "+data2.alerts.alert[0].headline+" ❗❗ "; // variable for weather alerts in area
+                     var wAlertShort = " ❗ "+data2.alerts.alert[0].event+" ❗"; // variable for short version of alerts in area         
+                     // ** can use either or of the above, whatever displays better **
+                                   
+            
+     console.log("UserInput: " + wCity + " - Weather Alert text: " + wAlert + "ShortVersion: " + wAlertShort); // test log for weather alerts
+                  
+     
+     $('#wAlertShort').text("Weather Alerts: "+ wAlertShort); // short alert
+     $('#wAlertLong').text("Weather Details "+ wAlert); // long alert with more details
 
                 
             })
 
 
-
-
-
-// sidenotes: 
-// can get weather alerts using 'desc' for the area using 'areas'(city) within the 'alert' array.
-//     can also just use the 'event' for shorter version of 'desc'
-// might need to convert city from sports team or viseversa
-
-// emoji icons included in some variables data so we dont have to add them later can just use the variable.
-  
-    
-    
-    
-    
-
-                // below code is inlcuded in weatherApi function for preload
+                // below code is inlcuded in weatherApi function that is preloaded
 
     
     var upcomingGames = {
