@@ -1,6 +1,23 @@
-* {
+:root { 
+  --black: rgba(36, 35, 35, 0.979);
+  --orange: #fc7921;
+  --green: #53d337;
+  --yellow: #fcc700;
+  --white: #EEEEEE;
+  --grey: #ABABAB;
+}
+
+ /* to use these do background-color: var(--green); */
+
+ * {
     margin-left: 10px;
   }
+
+
+  .wText {
+    color: var(--orange);
+  }
+
 
   /* BEGIN Header */
   header {
