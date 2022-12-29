@@ -3,10 +3,53 @@ let userInput = $('.user-input')
 let searchBtn = $('.search-Btn')
 let nfl = $('.football')
 
+var teamPair = "teamPair";
 
 var wKey = "48d9d1febcb9420b8bd201317222012"; // weather key, global so can use anywhere key is needed
 var wCity = "Orlando" // started value for city, will be replaced with search input
 // Weather Api CODE
+
+
+function getOdds(){ // function to get odds
+    
+     console.log("ODDS NavButton Clicked");//goes to odds.html when run
+
+    var odds = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'fa9423803dmshc3f5604a90d1177p1bc892jsn9e3c4329a014',
+            'X-RapidAPI-Host': 'odds.p.rapidapi.com'
+        }
+    };
+    fetch('https://odds.p.rapidapi.com/v4/sports/americanfootball_nfl/odds?regions=us&oddsFormat=decimal&markets=h2h%2Cspreads&dateFormat=iso', odds)
+        .then(function (response) {
+            console.log("ODDS Fetch Status: " + response.status);
+            if (response.status !==200) {
+                console.log("Error reaching Server" + "\n Status Code: " + response.status);
+            }
+            return response.json();
+        })
+            .then(function (oddsData) {
+                console.log(" ODDS 🡇 Data Object From Response Below 🡇"); console.log(oddsData);
+                
+                for (i = 0; i < oddsData.length; i++) { // loop to get all matchups and over/unders | spreads
+                        // tests output as well as creates variables to hold data
+                var teamPair1 = oddsData[i].home_team+" VS "+oddsData[i].away_team; console.log(teamPair1);
+                var spread1 = "Spread: (" + oddsData[i].bookmakers[0].markets[1].outcomes[1].point +
+                " "+  oddsData[i].bookmakers[0].markets[1].outcomes[0].point+ ")";console.log(spread1); 
+                   // just render from here and use classes to make things visible or not instead of odds page
+               
+
+                }
+                       
+          
+            
+        
+})
+
+}
+
+
 
 // function to get the weather
 async function getWeather() {
@@ -97,19 +140,7 @@ async function getWeather() {
         .catch(err => console.error(err));
 
 
-    var odds = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': 'fa9423803dmshc3f5604a90d1177p1bc892jsn9e3c4329a014',
-            'X-RapidAPI-Host': 'odds.p.rapidapi.com'
-        }
-    };
-
-    fetch('https://odds.p.rapidapi.com/v4/sports/upcoming/odds?regions=us&oddsFormat=decimal&markets=h2h%2Cspreads&dateFormat=iso', odds)
-        .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
-
+    
 
     var teams = {
         method: 'GET',
@@ -172,4 +203,6 @@ async function getWeather() {
 $(function () { // waits for page to load before any code is executed
     $('.search-Btn').on('click', getWeather); // listener for search button
     // insert what function to start above ^^^^^^^^^^^ set to getWeather now and includes other apis fetches in same funciton
+    $('#aOdds').on('click', getOdds);
+
 });
