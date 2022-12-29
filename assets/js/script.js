@@ -2,8 +2,9 @@ let team;
 let userInput = $('.user-input')
 let searchBtn = $('.search-Btn')
 let nfl = $('.football')
-
 var teamPair = "teamPair";
+
+
 
 var wKey = "48d9d1febcb9420b8bd201317222012"; // weather key, global so can use anywhere key is needed
 var wCity = "Orlando" // started value for city, will be replaced with search input
@@ -12,7 +13,10 @@ var wCity = "Orlando" // started value for city, will be replaced with search in
 
 function getOdds(){ // function to get odds
     
-     console.log("ODDS NavButton Clicked");//goes to odds.html when run
+     console.log("ODDS NavButton Clicked"); // test for function start
+     $('.weatherToggle').removeClass('is-flex').addClass('is-hidden'); // hides weather content
+     $('#searchSection').addClass('is-hidden');// hides search content
+     $('.oddsToggle').removeClass('is-hidden').addClass('is-flex'); // shows odds content
 
     var odds = {
         method: 'GET',
@@ -38,7 +42,7 @@ function getOdds(){ // function to get odds
                 var spread1 = "Spread: (" + oddsData[i].bookmakers[0].markets[1].outcomes[1].point +
                 " "+  oddsData[i].bookmakers[0].markets[1].outcomes[0].point+ ")";console.log(spread1); 
                    // just render from here and use classes to make things visible or not instead of odds page
-               
+                   $('#o'+i).text(teamPair1).append('<br/>' + spread1);    // renders odds/spread data
 
                 }
                        
@@ -53,6 +57,7 @@ function getOdds(){ // function to get odds
 
 // function to get the weather
 async function getWeather() {
+    $('.weatherToggle').removeClass('is-hidden','is-flex');
     // variable for url for CURRENT weather
     var wCity = document.querySelector('input').value; // changes default value to user entered text
 
