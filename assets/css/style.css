@@ -17,7 +17,10 @@
   .wText {
     color: var(--orange);
   }
-
+  /* overrides bulma margin issue with odds header */
+.oddsFix { 
+  margin-top: 170px;
+}
 
   /* BEGIN Header */
   header {
