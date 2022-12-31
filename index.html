@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <!-- Bulma link, bootstrap alternative-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">    
     <title>🏀 🏈 💰 Gambling Manifest 💰 🏈 🏀</title>
@@ -184,11 +185,496 @@
             </div>
             </div>
 
-
-
-      <div id="teaminfo">
-        Selected Teams Stats
-      </div>
+            <form>
+              <label for="team">Select a team</label>
+              <select name="team" id="team">
+      
+            <option>Cardinals</option>
+            <option>Falcons</option>
+            <option>Panthers</option>
+            <option>Bears</option>
+            <option>Cowboys</option>
+            <option>Lions</option>
+            <option>Packers</option>
+            <option>Rams</option>
+            <option>Vikings</option>
+            <option>Saints</option>
+            <option>Giants</option>
+            <option>Eagles</option>
+            <option>49ers</option>
+            <option>Seahawks</option>
+            <option>Buccaneers</option>
+            <option>Commanders</option>
+            <option>Ravens</option>
+            <option>Bills</option>
+            <option>Bengals</option>
+            <option>Browns</option>
+            <option>Broncos</option>
+            <option>Texans</option>
+            <option>colts</option>
+            <option>Jaguars</option>
+            <option>Chiefs</option>
+            <option>Raiders</option>
+            <option>Chargers</option>
+            <option>Dolphins</option>
+            <option>Patriots</option>
+            <option>Jets</option>
+            <option>Steelers</option>
+            <option>Titans</option>
+          </select>
+          </form>
+      
+          <button id="search" class="search-Btn">
+            Search
+          </button>
+      
+            <div id="teaminfo" class="box is-size-4 width is- has-background-dark" style="color: var(--green)">
+              Selected Teams Stats
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th><abbr title="Position">Pos</abbr></th>
+                    <th>Team</th>
+                    <th><abbr title="Played">Pld</abbr></th>
+                    <th><abbr title="Won">W</abbr></th>
+                    <th><abbr title="Lost">L</abbr></th>
+                    <th><abbr title="Touchdowns">TDs</abbr></th>
+                    <th><abbr title="Points">Pts</abbr></th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th><abbr title="Position">Pos</abbr></th>
+                    <th>Team</th>
+                    <th><abbr title="Played">Pld</abbr></th>
+                    <th><abbr title="Won">W</abbr></th>
+                    <th><abbr title="Lost">L</abbr></th>
+                    <th><abbr title="Touchdowns">TDs</abbr></th>
+                    <th><abbr title="Points">Pts</abbr></th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <th>1</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>2</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>3</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>4</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>5</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>6</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>7</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>8</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>9</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>10</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>11</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>12</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>13</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>14</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>15</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>16</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>17</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>18</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>19</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>20</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>21</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>22</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>23</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>24</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>25</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>26</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>27</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>28</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>29</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>30</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>31</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>32</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <br>
+            <div id="cheatsheet" class="box is-size-4 has-background-light" style="color: var(--yellow)">
+              How To Play
+            <br>  
+              <h1>1) Spread Bets</h1>
+              <br>
+              <p>Spread bets are the first type of “straight bet” and are the most common type of sports bet. 
+                With these, you choose a team along with a number (the spread) that dictates how many points that
+                team has to either win by or lose less than by. It’s a bit hard to explain, but it’s actually really
+                simple, so let’s take a look at an example. Say the Eagles and Cowboys are playing. The lines say Eagles
+                -3.5 and Cowboys +3.5. This means that the Eagles must win by 4 points or more in order to cover the spread. 
+                The Cowboys must either win or lose by 3 points or less in order to cover.A positive sign indicates that the 
+                team is the underdog while a negative sign is for the favorite. Note that if the final result of a game lands
+                on exactly the spread (such as if Lakers are -10 and win by exactly 10 points), then the bet is a push and you 
+                will be refunded the money you wagered.The standard odds for spread bets is -110 (learn how to read betting odds here).
+                If a lot of money comes in on one team, the odds may shift towards -120. If enough money comes in, the sportsbook may change
+                the spread by a half point (such as moving the Eagles from -3.5 to -4 in the example above).</p>
+            <br>    
+              <h1>2) Moneyline Bets</h1>
+              <br>
+              <p>Betting the moneyline—the second type of straight bet—is simply picking a team to win the game—sometimes called “straight up.”
+                Since there is no spread involved in moneyline bets, their odds have a much larger range than spread bets. Depending on how large 
+                of a favorite a team is, you may see their odds be as low as -1000 (1/10). If two teams are evenly matched in Vegas’ eyes, then you
+                may see their odds at even money (-110 when including the vig—what the sportsbook charges to take your bet). Using the same example
+                above, you may see the Eagles at -200 (the favorite) and the Cowboys at +165 (the underdog). You’ll always see that the absolute value
+                of the negative number is larger than the positive number because of the vig that sportsbooks charge. If the odds were simply -200 and +200,
+                the sportsbook would make no money.</p>
+            <br>
+              <h1>3) Total Bets (Over/Under</h1>  
+              <br>
+              <p>Total bets are the final kind of straight bet and are often referred to as the “Over/Under.”
+                With these, you simply choose whether the final score of the game will be over or under a certain number.          
+                Like spread bets, you will most often see total bets with lines of around -110, the total may move up or 
+                down as wagers come in, and your bet pushes if it lands exactly on the total. Back to the Eagles vs. Cowboys
+                example used above, let’s say the total is 44.5. If the final score is 27-24, the total points scored would be 
+                51 and the Over would hit. If the final score is 17-14, the total points scored would be 31 and the Under would hit.</p>
+            <br>    
+              <h1>4) Parleys</h1>
+              <br>
+              <p>A parlay is when you group multiple bets into a single wager. In order for the parlay to payout, each individual bet
+                (called a “leg”) must win. Since you only win if all the legs of the parlay hit, you receive a much higher payout than
+                you would if you made each bet individually. For example, a 4-team parlay in which leg has -110 odds, the final odds would
+                be around +1228—much higher than the payout would be if you just bet each leg on its own.People often parlay different games
+                from the same sport, but it’s possible to create cross-sport parlays too. For example, you may have a 5-team parlay that includes
+                the Eagles, Chiefs, Lakers, Yankees, and Flyers. You can even usually parlay futures bets too. For example, you could parlay the Chiefs,
+                Lakers, and Yankees all to win their respective championships.</p>
+            <br>
+              <h1>5) Prop Bets</h1>
+              <br>
+              <p>Prop bets (short for “proposition bets”) are bets that aren’t based on the final score of the game. If the bet isn’t a spread, total, or
+                 moneyline bet, it is typically considered a prop bet. Most sportsbook offer countless prob bets on popular games. These may include things
+                 like how many points a player will score, how many rushing yards a running back will have, or how many interceptions a team will have.</p>
+            <br>
+              <h2>Game Props</h2>
+              <br>
+              <p>Game props are any prop bet that doesn’t involve a specific player. Instead, game props often include the entire team or both teams. 
+                Some examples are the total amount of turnovers, which team will score first, and if there will be a safety or not.</p>
+            <br>
+              <h2>Player Props</h2>
+              <br>
+              <p>As the name implies, player props involve specific players. Player props are related to the stats of a specific player. 
+                Some examples include total passing/rushing/receiving yards, first touchdown scorer, and to record a triple-double.</p>
+            <br>
+              <h1>6) Teasers</h1>
+              <br>
+              <p>Teasers are parlays with the lines adjusted by a certain number of points in your favor in exchange for a lower payout 
+                as compared to a standard parlay. For example, many sports bettors create 6-point teasers with NFL spread bets. Instead 
+                of having the Patriots -7, they would be teased down to -1. Instead of the Bears being +4, they would be teased to +10.
+                It’s also possible to tease totals, but teasers involving spreads are more common. Many sportsbooks allow you to create 
+                teasers directly from the betslip. If yours does, simply select the standard lines you want to tease and look for the teaser
+                button in the betslip.</p>
+            <br>
+              <h1>7) Reverse Teasers</h1>
+              <br>
+              <p>Reverse teasers, or “pleasers”, are the opposite of teasers. Instead of having lines adjusted in your favor, they are 
+                adjusted against your favor in exchange for a higher payout as compared to a standard parlay. Using the same example above, 
+                one leg of a reverse teaser would be the Patriots -13 instead of -7 and another would be the Bears -2 instead of +4.</p>
+            <br>
+              <h1>8) Round Robin Bets</h1>
+              <br>
+              <p>Round robin bets work just like round robin tournaments. You first pick all of the wagers you are interested in—say A, B, and C.
+                The sportsbook or sports betting app will then automatically create 3 two-team parlays:
+                A + B
+                A + C
+                B + C
+                If you include 4 bets in your round robin, you could decide between doing 6 two-team parlays or 4 three-team parlays.
+                When you enter the amount you want to bet on a round robin in the betslip, it’s usually for each parlay. So, if you are 
+                doing the first example with teams A, B, and C and enter $5 into the bet slip, the total cost would be $15 ($5 wagered on 3 parlays).</p>
+            <br>
+              <h1>9) Futures Bets</h1>
+              <br>
+              <p>Futures bets are bets on future events such as who will win a championship or division, the total amount of wins a team will have in
+                the upcoming season, or who will win the MVP. It’s especially important to shop around for the best lines when placing futures bets as 
+                these tend to vary much more than straight bets.</p>
+            <br>
+              <h1>10) Head-to-Heads Bets</h1>
+              <br>
+              <p>Head-to-head bets are based on select participants in a game as opposed to the entire field. For example, instead of choosing the outright
+                winner of the Masters, you may choose who will finish better between Jordan Spieth and Brooks Koepka. You may also see head-to-head bets involving
+                who will pass for more yards, have more strikeouts, or score more goals.</p>
+            <br>    
+              <h1>11) If Bets</h1>
+              <br>
+              <p>If bets are less common than the other type of bets listed on this page, so much so that I have yet to see any listed in U.S. sportsbooks.
+                Though they are less popular, they are pretty straightforward. Essentially, if bets are just a succession of bets that are only placed if 
+                the previous bet wins. Say, for example, you pick the Eagles, 49ers, and Seahawks which each play at a different time on one Sunday.
+                Only if the Eagles bet hits will the 49ers bet be placed. Then, only if the 49ers bet hits will the Seahawks bet be placed. Note that each 
+                bet is treated as an independent bet—not as a parlay. So if you win the Eagles bet but the 49ers bet loses, you will still be paid out for 
+                the Eagles.</p>
+            </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        <!-- The JS scripts i used-->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="assets/js/script.js"></script>
+      </body>
+      </html>
 
 
 
@@ -203,6 +689,7 @@
 
   <!-- The JS scripts i used-->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
