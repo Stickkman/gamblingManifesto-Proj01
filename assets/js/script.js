@@ -6,10 +6,32 @@ var wKey = "48d9d1febcb9420b8bd201317222012"; // weather key, global so can use 
 var wCity = "Orlando" // started value for city, will be replaced with search input
 
 
+function homeScreen() {
+    console.log("Home NavButton Clicked"); // test for function start
+    $('.homeAct').addClass('active');
+    $('.wagerAct').removeClass('active');$('.statsAct').removeClass('active');
+    $('.weatherAct').removeClass('active');$('.oddsAct').removeClass('active'); // sets only the current tab to active
+
+    $('.statsToggle').removeClass('is-flex').addClass('is-hidden'); 
+    $('.weatherToggle').removeClass('is-flex').addClass('is-hidden');  // clears everything
+     $('#searchSection').removeClass('is-flex').addClass('is-hidden');
+     $('.oddsToggle').removeClass('is-flex').addClass('is-hidden'); 
+     $('.wagerTipsToggle').removeClass('is-flex').addClass('is-hidden');  
+        // can link whatever will be on homescreen below
+        
+
+
+
+    }
+
 function getOdds(){ // function to get odds
     
      console.log("ODDS NavButton Clicked"); // test for function start
-    $('.statsToggle').removeClass('is-flex').addClass('is-hidden'); 
+     $('.oddsAct').addClass('active');
+      $('.wagerAct').removeClass('active');$('.statsAct').removeClass('active');
+      $('.weatherAct').removeClass('active');$('.homeAct').removeClass('active'); // sets only the current tab to active
+    
+     $('.statsToggle').removeClass('is-flex').addClass('is-hidden'); 
     $('.weatherToggle').removeClass('is-flex').addClass('is-hidden'); 
      $('#searchSection').removeClass('is-flex').addClass('is-hidden');
      $('.oddsToggle').removeClass('is-hidden').addClass('is-flex'); // shows odds content, hides everything else
@@ -48,6 +70,11 @@ var spread1 = "Spread: (" + oddsData[i].bookmakers[0].markets[1].outcomes[1].poi
 
 function wagerTips() { // renders Wagering Tips section
     console.log("WagerTips NavButton Clicked"); // test for function start
+    
+    $('.wagerAct').addClass('active');
+    $('.statsAct').removeClass('active');$('.weatherAct').removeClass('active');
+     $('.homeAct').removeClass('active');$('.oddsAct').removeClass('active'); // sets only the current tab to active
+    
     $('.statsToggle').removeClass('is-flex').addClass('is-hidden'); 
     $('.weatherToggle').removeClass('is-flex').addClass('is-hidden'); 
      $('#searchSection').removeClass('is-flex').addClass('is-hidden');
@@ -59,6 +86,13 @@ function wagerTips() { // renders Wagering Tips section
 
 function teamStats() {
     console.log("TeamStats NavButton Clicked"); // test for function start
+    
+    $('.statsAct').addClass('active');
+      $('.wagerAct').removeClass('active');$('.oddsAct').removeClass('active');
+      $('.weatherAct').removeClass('active');$('.homeAct').removeClass('active'); // sets only the current tab to active
+    
+    
+    
     $('.statsToggle').removeClass('is-hidden').addClass('is-flex'); // Shows stats content hides the rest
     $('.weatherToggle').removeClass('is-flex').addClass('is-hidden'); 
      $('#searchSection').removeClass('is-flex').addClass('is-hidden');
@@ -69,6 +103,12 @@ function teamStats() {
 
 function teamWeather() {
     console.log("TeamWeather NavButton Clicked"); // test for function start
+    $('.weatherAct').addClass('active');
+      $('.wagerAct').removeClass('active');$('.statsAct').removeClass('active');
+      $('.odds').removeClass('active');$('.homeAct').removeClass('active'); // sets only the current tab to active
+    
+    
+    
     $('.statsToggle').removeClass('is-flex').addClass('is-hidden');
     $('.weatherToggle').removeClass('is-hidden').addClass('is-flex'); // Shows weather content hides the rest
      $('#searchSection').removeClass('is-hidden').addClass('is-flex');
@@ -218,5 +258,6 @@ $(function () { // waits for page to load before any code is executed
     $('#navWagerTips').on('click', wagerTips);
     $('#navTeamStats').on('click', teamStats);
     $('#navWeather').on('click', teamWeather);
+    $('#home').on('click', homeScreen);
 
 });
