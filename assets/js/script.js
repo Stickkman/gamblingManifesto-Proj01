@@ -1,22 +1,41 @@
-let team;
-let userInput = $('.user-input')
-let searchBtn = $('.search-Btn')
-let nfl = $('.football')
+var userInput = $('.user-input')
+var searchBtn = $('.search-Btn')
+var nfl = $('.football')
 var teamPair = "teamPair";
-
-
-
 var wKey = "48d9d1febcb9420b8bd201317222012"; // weather key, global so can use anywhere key is needed
 var wCity = "Orlando" // started value for city, will be replaced with search input
-// Weather Api CODE
 
+
+function homeScreen() {
+    console.log("Home NavButton Clicked"); // test for function start
+    $('.homeAct').addClass('active');
+    $('.wagerAct').removeClass('active');$('.statsAct').removeClass('active');
+    $('.weatherAct').removeClass('active');$('.oddsAct').removeClass('active'); // sets only the current tab to active
+
+    $('.statsToggle').removeClass('is-flex').addClass('is-hidden'); 
+    $('.weatherToggle').removeClass('is-flex').addClass('is-hidden');  // clears everything
+     $('#searchSection').removeClass('is-flex').addClass('is-hidden');
+     $('.oddsToggle').removeClass('is-flex').addClass('is-hidden'); 
+     $('.wagerTipsToggle').removeClass('is-flex').addClass('is-hidden');  
+        // can link whatever will be on homescreen below
+        
+
+
+
+    }
 
 function getOdds(){ // function to get odds
     
      console.log("ODDS NavButton Clicked"); // test for function start
-     $('.weatherToggle').removeClass('is-flex').addClass('is-hidden'); // hides weather content
-     $('#searchSection').addClass('is-hidden');// hides search content
-     $('.oddsToggle').removeClass('is-hidden').addClass('is-flex'); // shows odds content
+     $('.oddsAct').addClass('active');
+      $('.wagerAct').removeClass('active');$('.statsAct').removeClass('active');
+      $('.weatherAct').removeClass('active');$('.homeAct').removeClass('active'); // sets only the current tab to active
+    
+     $('.statsToggle').removeClass('is-flex').addClass('is-hidden'); 
+    $('.weatherToggle').removeClass('is-flex').addClass('is-hidden'); 
+     $('#searchSection').removeClass('is-flex').addClass('is-hidden');
+     $('.oddsToggle').removeClass('is-hidden').addClass('is-flex'); // shows odds content, hides everything else
+     $('.wagerTipsToggle').removeClass('is-flex').addClass('is-hidden'); 
 
     var odds = {
         method: 'GET',
@@ -39,21 +58,64 @@ function getOdds(){ // function to get odds
                 for (i = 0; i < oddsData.length; i++) { // loop to get all matchups and over/unders | spreads
                         // tests output as well as creates variables to hold data
                 var teamPair1 = oddsData[i].home_team+" VS "+oddsData[i].away_team; console.log(teamPair1);
-                var spread1 = "Spread: (" + oddsData[i].bookmakers[0].markets[1].outcomes[1].point +
-                " "+  oddsData[i].bookmakers[0].markets[1].outcomes[0].point+ ")";console.log(spread1); 
+var spread1 = "Spread: (" + oddsData[i].bookmakers[0].markets[1].outcomes[1].point +" "+ oddsData[i].bookmakers[0].markets[1].outcomes[0].point+ ")";console.log(spread1); 
                    // just render from here and use classes to make things visible or not instead of odds page
                    $('#o'+i).text(teamPair1).append('<br/>' + spread1);    // renders odds/spread data
 
                 }
-                       
-          
-            
-        
+
 })
 
 }
 
+function wagerTips() { // renders Wagering Tips section
+    console.log("WagerTips NavButton Clicked"); // test for function start
+    
+    $('.wagerAct').addClass('active');
+    $('.statsAct').removeClass('active');$('.weatherAct').removeClass('active');
+     $('.homeAct').removeClass('active');$('.oddsAct').removeClass('active'); // sets only the current tab to active
+    
+    $('.statsToggle').removeClass('is-flex').addClass('is-hidden'); 
+    $('.weatherToggle').removeClass('is-flex').addClass('is-hidden'); 
+     $('#searchSection').removeClass('is-flex').addClass('is-hidden');
+     $('.oddsToggle').removeClass('is-flex').addClass('is-hidden'); 
+     $('.wagerTipsToggle').removeClass('is-hidden').addClass('is-flex'); // Shows Wager Tips content hides the rest
+     
 
+}
+
+function teamStats() {
+    console.log("TeamStats NavButton Clicked"); // test for function start
+    
+    $('.statsAct').addClass('active');
+      $('.wagerAct').removeClass('active');$('.oddsAct').removeClass('active');
+      $('.weatherAct').removeClass('active');$('.homeAct').removeClass('active'); // sets only the current tab to active
+    
+    
+    
+    $('.statsToggle').removeClass('is-hidden').addClass('is-flex'); // Shows stats content hides the rest
+    $('.weatherToggle').removeClass('is-flex').addClass('is-hidden'); 
+     $('#searchSection').removeClass('is-flex').addClass('is-hidden');
+     $('.oddsToggle').removeClass('is-flex').addClass('is-hidden'); 
+     $('.wagerTipsToggle').removeClass('is-flex').addClass('is-hidden'); 
+
+}
+
+function teamWeather() {
+    console.log("TeamWeather NavButton Clicked"); // test for function start
+    $('.weatherAct').addClass('active');
+      $('.wagerAct').removeClass('active');$('.statsAct').removeClass('active');
+      $('.odds').removeClass('active');$('.homeAct').removeClass('active'); // sets only the current tab to active
+    
+    
+    
+    $('.statsToggle').removeClass('is-flex').addClass('is-hidden');
+    $('.weatherToggle').removeClass('is-hidden').addClass('is-flex'); // Shows weather content hides the rest
+     $('#searchSection').removeClass('is-hidden').addClass('is-flex');
+     $('.oddsToggle').removeClass('is-flex').addClass('is-hidden'); 
+     $('.wagerTipsToggle').removeClass('is-flex').addClass('is-hidden'); 
+    
+}
 
 // function to get the weather
 async function getWeather() {
@@ -70,23 +132,7 @@ async function getWeather() {
             }
             return response.json(); // ??might not need json since we resquest json in url, possible issues??
         })
-    //.then(function (data) {
-    // console.log(" 🡇 Data Object From Response Below 🡇"); console.log(data); // logs data object response 
-    //     var temp = data.current.temp_f + "F 🌡️"; // variable for current temp
-    //     var windSpeed = data.current.gust_mph + "MPH 🌬️"; // variable for current wind in MPH
-    //     var windDir = data.current.wind_dir + " 🧭"; // variable for wind direction
-
-    //     // test log of all variables pulled from response object
-    //     console.log("UserInput: " + wCity + " - Temp: "+temp+" Wind: "+windSpeed+" | Wind Direction: "+windDir);
-
-    //     // renders weather data to div ids in currentWeather section accordingly
-    //     $('#wName').text(wCity);
-    //     $('#wTemp').text("Temp: "+temp);
-    //     $('#windSpeed').text("Wind Speed: "+ windSpeed);
-    //     $('#windDir').text("Wind Direction: " + windDir);
-
-
-    // })
+   
     console.log(" 🡇 Data Object From Response Below 🡇"); console.log(data); // logs data object response 
     var temp = data.current.temp_f + "F 🌡️"; // variable for current temp
     var windSpeed = data.current.gust_mph + "MPH 🌬️"; // variable for current wind in MPH
@@ -96,7 +142,7 @@ async function getWeather() {
     console.log("UserInput: " + wCity + " - Temp: " + temp + " Wind: " + windSpeed + " | Wind Direction: " + windDir);
 
     // renders weather data to div ids in currentWeather section accordingly
-    $('#wName').text(wCity);
+    $('#wName').text(wCity).prepend('Current Weather in '); 
     $('#wTemp').text("Temp: " + temp);
     $('#windSpeed').text("Wind Speed: " + windSpeed);
     $('#windDir').text("Wind Direction: " + windDir);
@@ -209,5 +255,9 @@ $(function () { // waits for page to load before any code is executed
     $('.search-Btn').on('click', getWeather); // listener for search button
     // insert what function to start above ^^^^^^^^^^^ set to getWeather now and includes other apis fetches in same funciton
     $('#aOdds').on('click', getOdds);
+    $('#navWagerTips').on('click', wagerTips);
+    $('#navTeamStats').on('click', teamStats);
+    $('#navWeather').on('click', teamWeather);
+    $('#home').on('click', homeScreen);
 
 });
