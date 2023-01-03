@@ -5,7 +5,6 @@ var teamPair = "teamPair";
 var wKey = "48d9d1febcb9420b8bd201317222012"; // weather key, global so can use anywhere key is needed
 var wCity = "Orlando" // started value for city, will be replaced with search input
 
-
 function homeScreen() {
     console.log("Home NavButton Clicked"); // test for function start
     $('.homeAct').addClass('active');
@@ -13,14 +12,11 @@ function homeScreen() {
     $('.weatherAct').removeClass('active');$('.oddsAct').removeClass('active'); // sets only the current tab to active
 
     $('.statsToggle').removeClass('is-flex').addClass('is-hidden'); 
-    $('.weatherToggle').removeClass('is-flex').addClass('is-hidden');  // clears everything
+    $('.weatherToggle').removeClass('is-flex').addClass('is-hidden');  // clears all other topics for homepage display
      $('#searchSection').removeClass('is-flex').addClass('is-hidden');
      $('.oddsToggle').removeClass('is-flex').addClass('is-hidden'); 
      $('.wagerTipsToggle').removeClass('is-flex').addClass('is-hidden');  
         // can link whatever will be on homescreen below
-        
-
-
 
     }
 
@@ -80,7 +76,6 @@ function wagerTips() { // renders Wagering Tips section
      $('#searchSection').removeClass('is-flex').addClass('is-hidden');
      $('.oddsToggle').removeClass('is-flex').addClass('is-hidden'); 
      $('.wagerTipsToggle').removeClass('is-hidden').addClass('is-flex'); // Shows Wager Tips content hides the rest
-     
 
 }
 
@@ -90,9 +85,7 @@ function teamStats() {
     $('.statsAct').addClass('active');
       $('.wagerAct').removeClass('active');$('.oddsAct').removeClass('active');
       $('.weatherAct').removeClass('active');$('.homeAct').removeClass('active'); // sets only the current tab to active
-    
-    
-    
+
     $('.statsToggle').removeClass('is-hidden').addClass('is-flex'); // Shows stats content hides the rest
     $('.weatherToggle').removeClass('is-flex').addClass('is-hidden'); 
      $('#searchSection').removeClass('is-flex').addClass('is-hidden');
@@ -105,10 +98,8 @@ function teamWeather() {
     console.log("TeamWeather NavButton Clicked"); // test for function start
     $('.weatherAct').addClass('active');
       $('.wagerAct').removeClass('active');$('.statsAct').removeClass('active');
-      $('.odds').removeClass('active');$('.homeAct').removeClass('active'); // sets only the current tab to active
-    
-    
-    
+      $('.oddsAct').removeClass('active');$('.homeAct').removeClass('active'); // sets only the current tab to active
+
     $('.statsToggle').removeClass('is-flex').addClass('is-hidden');
     $('.weatherToggle').removeClass('is-hidden').addClass('is-flex'); // Shows weather content hides the rest
      $('#searchSection').removeClass('is-hidden').addClass('is-flex');
@@ -163,13 +154,10 @@ async function getWeather() {
             var wAlertShort = " ❗ " + data2.alerts.alert[0].event + " ❗"; // variable for short version of alerts in area         
             // ** can use either or of the above, whatever displays better **
 
-
             console.log("UserInput: " + wCity + " - Weather Alert text: " + wAlert + "ShortVersion: " + wAlertShort); // test log for weather alerts
-
 
             $('#wAlertShort').text("Weather Alerts: " + wAlertShort); // short alert
             $('#wAlertLong').text("Weather Details " + wAlert); // long alert with more details
-
 
         })
 
@@ -190,9 +178,6 @@ async function getWeather() {
         .then(response => console.log(response))
         .catch(err => console.error(err));
 
-
-    
-
     var teams = {
         method: 'GET',
         headers: {
@@ -205,7 +190,6 @@ async function getWeather() {
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
-
 
     var teamStandings = {
         method: 'GET',
@@ -220,7 +204,6 @@ async function getWeather() {
         .then(response => console.log(response))
         .catch(err => console.error(err));
 
-
     var players = {
         method: 'GET',
         headers: {
@@ -233,7 +216,6 @@ async function getWeather() {
         .then(response => response.json())
         .then(response => console.log(response))
         .catch(err => console.error(err));
-
 
     var playerStats = {
         method: 'GET',
