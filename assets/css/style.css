@@ -65,9 +65,17 @@
  
 
   /* BEGIN Body */
+  .main-sections {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 600%;
+    color: cornsilk;
+    margin-top: 40px;
+  
+  }
+
   body {
-    background: url("https://wallpaperset.com/w/full/5/8/c/119900.jpg");
-    background-size: 1300px;
+    background: url("../images/1126028-3840x2160-desktop-4k-canadian-football-wallpaper-photo.jpg");
+    background-size: cover;
   }
 
 /* Once a team is selected the sports img can be hidden
