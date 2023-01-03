@@ -105,7 +105,7 @@ function teamWeather() {
     console.log("TeamWeather NavButton Clicked"); // test for function start
     $('.weatherAct').addClass('active');
       $('.wagerAct').removeClass('active');$('.statsAct').removeClass('active');
-      $('.odds').removeClass('active');$('.homeAct').removeClass('active'); // sets only the current tab to active
+      $('.oddsAct').removeClass('active');$('.homeAct').removeClass('active'); // sets only the current tab to active
     
     
     
